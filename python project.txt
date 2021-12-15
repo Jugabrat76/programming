@@ -1,0 +1,29 @@
+// plot the data image sensor and plot these data graphically on a display device
+
+filepath = "/content/meeeeeeee.txt"
+ldr1=[]
+ldr2=[]
+
+i=0
+with open(filepath) as datafile :
+  data = datafile.readlines()
+
+for d in data:
+  d2 = int(d.strip())
+  if i%2==0:
+    ldr1.append(d2)
+  else:
+    ldr2.append(d2)
+  i=i+1
+
+print(len(data))
+print(len(ldr1))
+print(len(ldr2))
+
+import matplotlib.pyplot as plt
+
+plt.plot(ldr1)
+
+plt.plot(ldr2)
+
+plt.plot(ldr1,ldr2)
